@@ -1,6 +1,7 @@
-[gd_scene load_steps=4 format=2]
+[gd_scene load_steps=5 format=2]
 
 [ext_resource path="res://Scenes/Player.gd" type="Script" id=1]
+[ext_resource path="res://Scenes/Pistol.tscn" type="PackedScene" id=2]
 
 [sub_resource type="CapsuleShape" id=1]
 radius = 0.454283
@@ -27,3 +28,5 @@ transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1.82904, 0 )
 [node name="Camera" type="Camera" parent="Pivot"]
 
 [node name="Gun" type="Spatial" parent="Pivot"]
+
+[node name="Pistol" parent="Pivot/Gun" instance=ExtResource( 2 )]
