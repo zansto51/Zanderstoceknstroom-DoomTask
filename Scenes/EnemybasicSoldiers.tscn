@@ -23,21 +23,6 @@ animations = [ {
 "name": "walking",
 "speed": 5.0
 }, {
-"frames": [ ExtResource( 15 ), ExtResource( 13 ) ],
-"loop": true,
-"name": "Shoot",
-"speed": 5.0
-}, {
-"frames": [  ],
-"loop": true,
-"name": "Die",
-"speed": 5.0
-}, {
-"frames": [ ExtResource( 3 ), ExtResource( 3 ) ],
-"loop": true,
-"name": "Hit",
-"speed": 5.0
-}, {
 "frames": [ ExtResource( 2 ), ExtResource( 11 ), ExtResource( 1 ), ExtResource( 6 ), ExtResource( 7 ), ExtResource( 9 ), ExtResource( 12 ), ExtResource( 14 ) ],
 "loop": true,
 "name": "Explode ",
@@ -47,12 +32,27 @@ animations = [ {
 "loop": true,
 "name": "Idle",
 "speed": 5.0
+}, {
+"frames": [ ExtResource( 3 ), ExtResource( 3 ) ],
+"loop": true,
+"name": "Hit",
+"speed": 5.0
+}, {
+"frames": [ ExtResource( 2 ), ExtResource( 11 ), ExtResource( 1 ), ExtResource( 6 ), ExtResource( 7 ), ExtResource( 9 ), ExtResource( 12 ), ExtResource( 14 ) ],
+"loop": true,
+"name": "Die",
+"speed": 5.0
+}, {
+"frames": [ ExtResource( 15 ), ExtResource( 13 ) ],
+"loop": true,
+"name": "Shoot",
+"speed": 5.0
 } ]
 
 [sub_resource type="CapsuleShape" id=1]
 radius = 0.53
 
-[node name="EnemybasicSoldiers" type="KinematicBody"]
+[node name="EnemybasicSoldiers" type="KinematicBody" groups=["Enemy"]]
 script = ExtResource( 5 )
 
 [node name="AnimatedSprite3D" type="AnimatedSprite3D" parent="."]
@@ -62,7 +62,6 @@ offset = Vector2( -23.01, 0 )
 billboard = 2
 frames = SubResource( 2 )
 animation = "walking"
-playing = true
 
 [node name="CollisionShape" type="CollisionShape" parent="."]
 transform = Transform( 1, 0, 0, 0, -4.37114e-08, -1, 0, 1, -4.37114e-08, 0, 0, 0 )
@@ -70,4 +69,4 @@ shape = SubResource( 1 )
 
 [node name="RayCast" type="RayCast" parent="."]
 
-[node name="Timer" type="Timer" parent="." groups=["Enemy"]]
+[node name="Timer" type="Timer" parent="."]
