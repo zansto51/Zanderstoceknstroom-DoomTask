@@ -24,8 +24,8 @@ animations = [ {
 "speed": 5.0
 }, {
 "frames": [ ExtResource( 2 ), ExtResource( 11 ), ExtResource( 1 ), ExtResource( 6 ), ExtResource( 7 ), ExtResource( 9 ), ExtResource( 12 ), ExtResource( 14 ) ],
-"loop": true,
-"name": "Explode ",
+"loop": false,
+"name": "Die",
 "speed": 5.0
 }, {
 "frames": [ ExtResource( 4 ) ],
@@ -39,8 +39,8 @@ animations = [ {
 "speed": 5.0
 }, {
 "frames": [ ExtResource( 2 ), ExtResource( 11 ), ExtResource( 1 ), ExtResource( 6 ), ExtResource( 7 ), ExtResource( 9 ), ExtResource( 12 ), ExtResource( 14 ) ],
-"loop": true,
-"name": "Die",
+"loop": false,
+"name": "Explode ",
 "speed": 5.0
 }, {
 "frames": [ ExtResource( 15 ), ExtResource( 13 ) ],
