@@ -18,9 +18,9 @@ func take_damage(dmg_amount):
 		death()
 		return
 	move = false
-	$AnimatedSprite3D.play("hit")
+	$AnimatedSprite3D.play("Hit")
 	yield($AnimatedSprite3D,"animation_finished")
-	$AnimatedSprite3D.play("walking")
+	$AnimatedSprite3D.play("Walking")
 	move = true
 	
 func _physics_process(delta):
