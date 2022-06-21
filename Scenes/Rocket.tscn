@@ -1,0 +1,44 @@
+[gd_scene load_steps=12 format=2]
+
+[ext_resource path="res://Sprites/Lava Demon/xpl1b0.png" type="Texture" id=1]
+[ext_resource path="res://Sprites/Lava Demon/xpl1a0.png" type="Texture" id=2]
+[ext_resource path="res://Sprites/Lava Demon/xpl1d0.png" type="Texture" id=3]
+[ext_resource path="res://Sprites/Lava Demon/xpl1c0.png" type="Texture" id=4]
+[ext_resource path="res://Sprites/Lava Demon/xpl1f0.png" type="Texture" id=5]
+[ext_resource path="res://Sprites/Lava Demon/xpl1e0.png" type="Texture" id=6]
+[ext_resource path="res://Sprites/Launcher/grnda7a3.png" type="Texture" id=7]
+[ext_resource path="res://Scenes/Rocket.gd" type="Script" id=8]
+
+[sub_resource type="SphereShape" id=1]
+radius = 0.28637
+
+[sub_resource type="SpriteFrames" id=2]
+animations = [ {
+"frames": [ ExtResource( 2 ), ExtResource( 1 ), ExtResource( 4 ), ExtResource( 3 ), ExtResource( 6 ), ExtResource( 5 ) ],
+"loop": true,
+"name": "explode",
+"speed": 6.0
+}, {
+"frames": [ ExtResource( 7 ) ],
+"loop": true,
+"name": "rocket",
+"speed": 5.0
+} ]
+
+[sub_resource type="SphereShape" id=3]
+radius = 1.83988
+
+[node name="Rocket" type="Area"]
+script = ExtResource( 8 )
+
+[node name="CollisionShape" type="CollisionShape" parent="."]
+shape = SubResource( 1 )
+
+[node name="AnimatedSprite3D" type="AnimatedSprite3D" parent="."]
+frames = SubResource( 2 )
+animation = "rocket"
+
+[node name="SplashDamage" type="Area" parent="."]
+
+[node name="CollisionShape" type="CollisionShape" parent="SplashDamage"]
+shape = SubResource( 3 )
