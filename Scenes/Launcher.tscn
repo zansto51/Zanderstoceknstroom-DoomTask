@@ -23,7 +23,7 @@ animations = [ {
 "frames": [ ExtResource( 8 ), ExtResource( 9 ), ExtResource( 10 ), ExtResource( 7 ), ExtResource( 1 ), ExtResource( 4 ), ExtResource( 5 ), ExtResource( 3 ), ExtResource( 2 ), ExtResource( 6 ) ],
 "loop": true,
 "name": "shoot",
-"speed": 4.0
+"speed": 6.0
 } ]
 
 [node name="Launcher" type="Spatial"]
