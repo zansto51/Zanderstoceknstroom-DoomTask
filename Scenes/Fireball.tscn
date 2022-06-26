@@ -6,7 +6,7 @@
 [ext_resource path="res://Sprites/Lava Demon/xpl1c0.png" type="Texture" id=4]
 [ext_resource path="res://Sprites/Lava Demon/xpl1f0.png" type="Texture" id=5]
 [ext_resource path="res://Sprites/Lava Demon/xpl1e0.png" type="Texture" id=6]
-[ext_resource path="res://Sprites/Launcher/grnda1.png" type="Texture" id=7]
+[ext_resource path="res://Sprites/Lava Demon/fx09h0.png" type="Texture" id=7]
 [ext_resource path="res://Scenes/Rocket.gd" type="Script" id=8]
 
 [sub_resource type="SphereShape" id=1]
@@ -21,7 +21,7 @@ animations = [ {
 }, {
 "frames": [ ExtResource( 7 ) ],
 "loop": true,
-"name": "rocket",
+"name": "fireball",
 "speed": 5.0
 } ]
 
@@ -38,11 +38,12 @@ shape = SubResource( 1 )
 transform = Transform( 6, 0, 0, 0, 6, 0, 0, 0, 6, 0, 0, 0 )
 billboard = 2
 frames = SubResource( 2 )
-animation = "rocket"
+animation = "fireball"
 
 [node name="SplashDamage" type="Area" parent="."]
 
 [node name="CollisionShape" type="CollisionShape" parent="SplashDamage"]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 0.0019263 )
 shape = SubResource( 3 )
 
 [connection signal="body_entered" from="." to="." method="_on_Rocket_body_entered"]

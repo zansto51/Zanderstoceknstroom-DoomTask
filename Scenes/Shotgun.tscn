@@ -5,7 +5,7 @@
 [ext_resource path="res://Sprites/shotgun/spasb0.png" type="Texture" id=3]
 [ext_resource path="res://Sprites/shotgun/spafc0.png" type="Texture" id=4]
 [ext_resource path="res://Sprites/shotgun/spasa0.png" type="Texture" id=5]
-[ext_resource path="res://Scenes/Gun.gd" type="Script" id=6]
+[ext_resource path="res://Scenes/Shotgun.gd" type="Script" id=6]
 [ext_resource path="res://Sprites/shotgun/spasc0.png" type="Texture" id=7]
 
 [sub_resource type="SpriteFrames" id=1]
