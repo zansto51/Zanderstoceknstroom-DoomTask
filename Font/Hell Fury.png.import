@@ -2,15 +2,15 @@
 
 importer="texture"
 type="StreamTexture"
-path="res://.import/frb1d0.png-107711fd4da435e472e3a38ff7c9e6f7.stex"
+path="res://.import/Hell Fury.png-7d69a0774f78ef7fbfa05503bcd139b6.stex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Sprites/Lava Demon/frb1d0.png"
-dest_files=[ "res://.import/frb1d0.png-107711fd4da435e472e3a38ff7c9e6f7.stex" ]
+source_file="res://Font/Hell Fury.png"
+dest_files=[ "res://.import/Hell Fury.png-7d69a0774f78ef7fbfa05503bcd139b6.stex" ]
 
 [params]
 
@@ -23,7 +23,7 @@ flags/repeat=0
 flags/filter=false
 flags/mipmaps=false
 flags/anisotropic=false
-flags/srgb=1
+flags/srgb=2
 process/fix_alpha_border=true
 process/premult_alpha=false
 process/HDR_as_SRGB=false

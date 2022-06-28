@@ -6,7 +6,7 @@
 [ext_resource path="res://Sprites/Lava Demon/xpl1c0.png" type="Texture" id=4]
 [ext_resource path="res://Sprites/Lava Demon/xpl1f0.png" type="Texture" id=5]
 [ext_resource path="res://Sprites/Lava Demon/xpl1e0.png" type="Texture" id=6]
-[ext_resource path="res://Sprites/Lava Demon/fx09h0.png" type="Texture" id=7]
+[ext_resource path="res://Sprites/Lava Demon/frb1d0.png" type="Texture" id=7]
 [ext_resource path="res://Scenes/Rocket.gd" type="Script" id=8]
 
 [sub_resource type="SphereShape" id=1]
