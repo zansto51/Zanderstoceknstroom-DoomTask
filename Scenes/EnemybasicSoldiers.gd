@@ -10,6 +10,8 @@ var health = 20
 var move = true
 
 var searching = false
+var shooting = false
+var dead = false
 onready var ray = $Visual
 
 func _ready():
@@ -27,21 +29,26 @@ func take_damage(dmg_amount):
 	move = true
 	
 func _physics_process(delta):
-	if searching:
+	if dead:
+		return
+	look_at_player()
+	if searching and not shooting:
 		if path_index < path.size():
 			var direction = (path[path_index] - global_transform.origin)
 			if direction.length() < 1:
 				path_index += 1
 			else:
 				if move:
+					$AnimatedSprite3D.play("Walking")###
 					move_and_slide(direction.normalized() * speed, Vector3.UP)
 	else:
-		$AnimatedSprite3D.play("idle")
+		if not shooting: 
+			$AnimatedSprite3D.play("Idle")
 		
 func look_at_player():
-	ray.look_at(player.global_transform.origin)
+	ray.look_at(player.global_transform.origin, Vector3.UP)
 	if ray.is_colliding():
-		if ray.collider().is_in_group("Player"):
+		if ray.get_collider().is_in_group("Player"):
 			searching = true
 			print("I see you")
 		else:
@@ -79,3 +86,7 @@ func _on_Aural_body_entered(body):
 	if body.is_in_group("Player"):
 		print("I hear you")
 		searching = true
+
+
+func _on_ShootTimer_timeout():
+	pass # Replace with function body.

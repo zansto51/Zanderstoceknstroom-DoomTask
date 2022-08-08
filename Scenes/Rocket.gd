@@ -1,22 +1,22 @@
 extends Area
 
-var fireball_speed = 10
-var fireball_damage = 25
-var fireball_splash = 25
+var rocket_speed = 10
+var rocket_damage = 25
+var rocket_splash = 25
 
 func deal_damage():
 	var enemies = get_overlapping_bodies()
 	for body in enemies:
 		if body.is_in_group("Enemy"):
-			body.take_damage(fireball_damage)
+			body.take_damage(rocket_damage)
 	enemies = $SplashDamage.get_overlapping_bodies()
 	for body in enemies:
 		if body.is_in_group("Enemy"):
-			body.take_damage(fireball_splash)
+			body.take_damage(rocket_splash)
 
 
 func _process(delta):
-	translate(Vector3.FORWARD * fireball_speed * delta)
+	translate(Vector3.FORWARD * rocket_speed * delta)
 
 
 func _on_Rocket_body_entered(body):

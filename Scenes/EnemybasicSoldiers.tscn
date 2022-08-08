@@ -21,9 +21,9 @@ animations = [ {
 "name": "Die",
 "speed": 5.0
 }, {
-"frames": [ ExtResource( 14 ) ],
-"loop": true,
-"name": "Idle",
+"frames": [ ExtResource( 3 ), ExtResource( 4 ), ExtResource( 9 ), ExtResource( 10 ), ExtResource( 11 ), ExtResource( 6 ), ExtResource( 12 ) ],
+"loop": false,
+"name": "Explode ",
 "speed": 5.0
 }, {
 "frames": [ ExtResource( 8 ) ],
@@ -31,9 +31,9 @@ animations = [ {
 "name": "Hit",
 "speed": 5.0
 }, {
-"frames": [ ExtResource( 3 ), ExtResource( 4 ), ExtResource( 9 ), ExtResource( 10 ), ExtResource( 11 ), ExtResource( 6 ), ExtResource( 12 ) ],
-"loop": false,
-"name": "Explode ",
+"frames": [ ExtResource( 14 ) ],
+"loop": true,
+"name": "Idle",
 "speed": 5.0
 }, {
 "frames": [ ExtResource( 7 ) ],
@@ -48,7 +48,8 @@ animations = [ {
 } ]
 
 [sub_resource type="CapsuleShape" id=1]
-radius = 1.05031
+radius = 0.554934
+height = 0.884862
 
 [sub_resource type="CylinderShape" id=3]
 radius = 10.2799
@@ -57,29 +58,36 @@ radius = 10.2799
 script = ExtResource( 5 )
 
 [node name="AnimatedSprite3D" type="AnimatedSprite3D" parent="."]
-transform = Transform( 3.5, 0, 0, 0, 3.5, 0, 0, 0, 3.5, 0.0351373, -0.827206, 0.287851 )
+transform = Transform( 3.5, 0, 0, 0, 3.5, 0, 0, 0, 3.5, 0.0351373, -0.248834, 0.287851 )
 centered = false
 offset = Vector2( -33.822, 0 )
 billboard = 2
 frames = SubResource( 2 )
 animation = "Walking"
-frame = 1
 playing = true
 
 [node name="CollisionShape" type="CollisionShape" parent="."]
-transform = Transform( 1.5, 0, 0, 0, -6.55671e-08, -1.5, 0, 1.5, -6.55671e-08, -0.0693714, 0.443546, 0.867811 )
+transform = Transform( 1.5, 0, 0, 0, -6.55671e-08, -1.5, 0, 1.5, -6.55671e-08, -0.0693714, 1.30678, 0.867811 )
 shape = SubResource( 1 )
 
 [node name="Visual" type="RayCast" parent="."]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.86323, 0 )
+enabled = true
 cast_to = Vector3( 0, 0, -20 )
 
 [node name="Timer" type="Timer" parent="."]
 autostart = true
 
 [node name="Aural" type="Area" parent="."]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.86323, 0 )
 
 [node name="CollisionShape" type="CollisionShape" parent="Aural"]
 shape = SubResource( 3 )
 
+[node name="ShootTimer" type="Timer" parent="."]
+wait_time = 2.5
+autostart = true
+
 [connection signal="timeout" from="Timer" to="." method="_on_Timer_timeout"]
 [connection signal="body_entered" from="Aural" to="." method="_on_Aural_body_entered"]
+[connection signal="timeout" from="ShootTimer" to="." method="_on_ShootTimer_timeout"]

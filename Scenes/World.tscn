@@ -10,7 +10,7 @@
 [node name="HUD" parent="." instance=ExtResource( 4 )]
 
 [node name="EnemybasicSoldiers" parent="." instance=ExtResource( 3 )]
-transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1.15562, 0 )
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1.09305, 0 )
 
 [node name="Test levelglb" parent="." instance=ExtResource( 2 )]
 transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.271643, 0 )
