@@ -14,6 +14,8 @@ var shooting = false
 var dead = false
 onready var ray = $Visual
 
+var damage = 8
+
 func _ready():
 	pass
 	
@@ -65,8 +67,9 @@ func find_path(target):
 	path_index = 0
 	
 func death():
-	set_process(false)
-	set_physics_process(false)
+	dead = true
+	#set_process(false)
+	#set_physics_process(false)
 	$CollisionShape.disabled = true
 	yield($AnimatedSprite3D,"animation_finished")
 	if health < -20:
@@ -74,8 +77,16 @@ func death():
 	else:
 		$AnimatedSprite3D.play("Die")
 	
-func shoot(target):
-	pass
+func shoot():
+	if searching and not dead and not shooting:
+		$AnimatedSprite3D.play("Shoot")
+		shooting = true 
+		yield($AnimatedSprite3D,"frame_changed")
+		if ray.is_colliding():
+			if ray.get_collider().is_in_group("Player"):
+				PlayerStats.change_health(-damage)
+			yield($AnimatedSprite3D,"animation_finished")
+			shooting = false
 
 
 func _on_Timer_timeout():
@@ -89,4 +100,4 @@ func _on_Aural_body_entered(body):
 
 
 func _on_ShootTimer_timeout():
-	pass # Replace with function body.
+	shoot() # Replace with function body.

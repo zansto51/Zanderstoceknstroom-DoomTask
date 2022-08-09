@@ -64,6 +64,7 @@ offset = Vector2( -33.822, 0 )
 billboard = 2
 frames = SubResource( 2 )
 animation = "Walking"
+frame = 1
 playing = true
 
 [node name="CollisionShape" type="CollisionShape" parent="."]
