@@ -1,0 +1,13 @@
+[remap]
+
+importer="qodot.map"
+type="Resource"
+path="res://.import/testlevel.map-c683a6871d49948cd5f3b61da13cfd46.tres"
+
+[deps]
+
+source_file="res://addons/qodot/game_definitions/trenchbroom/testlevel.map"
+dest_files=[ "res://.import/testlevel.map-c683a6871d49948cd5f3b61da13cfd46.tres" ]
+
+[params]
+
