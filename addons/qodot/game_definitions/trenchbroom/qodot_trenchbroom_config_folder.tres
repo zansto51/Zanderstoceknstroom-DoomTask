@@ -9,7 +9,7 @@
 script = ExtResource( 3 )
 export_file = false
 trenchbroom_games_folder = "H:/Godot/DoomWads/TrenchBroom/games"
-game_name = "Qodot"
+game_name = "Qodot2"
 icon = ExtResource( 2 )
 game_config_file = ExtResource( 4 )
 fgd_files = [ ExtResource( 1 ) ]
